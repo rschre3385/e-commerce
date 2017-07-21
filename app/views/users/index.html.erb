@@ -1,0 +1,21 @@
+<h1>Users</h1>
+<table class="table">
+	<thead>
+		<th>email</th>
+		<th>Actions</th>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+		<tr>
+			<td><%= user.email %></td>
+			<td>
+				<%= form_tag users_update_path do |f| %>
+				  <%= hidden_field_tag :user_id, user.id %>
+				  <%= select_tag :role, options_for_select(['admin', 'guest']) %>
+				  <%= submit_tag 'Change Role', class: 'btn btn-primary' %>
+				<% end %> 
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

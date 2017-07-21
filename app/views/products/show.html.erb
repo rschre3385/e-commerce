@@ -1,0 +1,46 @@
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <% if @product.image.url.nil? == false %>
+      <p><%= image_tag @product.image.url, class: "img-thumbnail" %></p>
+      <% end %>
+      <div class="caption">
+        <h3>
+          <%= @product.name %>
+        </h3>
+        <p>
+          <strong>Price:</strong>
+          <%= @product.price %>
+        </p>
+
+        <p>
+          <strong>Quantity:</strong>
+          <%= @product.quantity %>
+        </p>
+        <p>
+          <strong>Description:</strong>
+          <%= @product.description %>
+        </p>
+        <p>
+          <strong>Brand:</strong>
+          <%= @product.brand %>
+        </p>
+        <p>
+          <strong>Rating:</strong>
+          <%= @product.rating %>
+        </p>
+        <p>
+          <strong>Category:</strong>
+          <%= @product.category_id %>
+        </p>
+        <div class="btn-group">
+          <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-primary"%>
+          <%= link_to 'Back', products_path, class: "btn btn-default" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
