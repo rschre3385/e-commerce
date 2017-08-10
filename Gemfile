@@ -39,7 +39,7 @@ gem 'hirb'       # or 'pry-rails'; for rails c
 gem 'better_errors', group: :development
 gem 'bootstrap-form'
 gem 'binding_of_caller'
-
+gem 'fog'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro'
