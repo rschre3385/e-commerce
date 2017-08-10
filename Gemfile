@@ -9,7 +9,6 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -30,21 +29,17 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
 gem 'font-awesome-rails'
-gem 'jquery-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'cancancan'
-gem 'hirb'       # or 'pry-rails'; for rails c
-gem 'better_errors', group: :development
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
-gem 'devise'
-gem 'cancancan'
 gem 'hirb'       # or 'pry-rails'; for rails c
 gem 'better_errors', group: :development
 gem 'bootstrap-form'
 gem 'binding_of_caller'
+gem 'commontator', '~> 4.11.1'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro'
@@ -52,6 +47,12 @@ gem 'certified' #for the PC users
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+#for Heroku:
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -64,7 +65,10 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'sqlite3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
